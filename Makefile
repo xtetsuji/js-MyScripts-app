@@ -23,7 +23,7 @@ usage:
 	@echo "target \"deploy\"'s current: DEPLOY_DIR=$(DEPLOY_DIR)"
 
 deploy:
-	find . -type f -name \*.js -exec cp '{}' $(DEPLOY_DIR)/
+	find . -type f -name \*.js -exec cp '{}' $(DEPLOY_DIR)/ ';'
 
 http-get-exist: 
 	@test -n "$(HTTP_GET)" || { echo 'require "curl" or "wget" or "fetch" for HTTP GET' ; exit 1 ; }
