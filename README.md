@@ -1,5 +1,5 @@
-JavaScript library for MyScripts for iOS
-========================================
+JavaScript library of MyScripts iOS app
+=======================================
 
 (Simply English description is followed Japanese)
 
