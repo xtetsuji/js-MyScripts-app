@@ -14,6 +14,12 @@ MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウン
 
 何か不具合、ご要望ありましたら、Issueを使ってくださるか、Twitter [@xtetsuji](https://twitter.com/xtetsuji) までご連絡いただければ、出来る限り対処します。
 
+参考:
+
+- [作者による公式ページ](http://unitkay.wordpress.com/myscripts/)
+- [MyScripts @ Wiki](http://www51.atwiki.jp/myscripts/)
+- [Delicious/ogata/#myscripts (my bookmarks)](http://delicious.com/ogata/myscripts)
+
 ----
 
 This repositry is JavaScript library for Japannse iOS application ["MyScripts"](http://unitkay.wordpress.com/myscripts/).
