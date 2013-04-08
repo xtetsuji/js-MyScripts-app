@@ -7,6 +7,7 @@ HTTP_GET	:= $(shell for CMD in curl wget fetch ; do if type $$CMD >/dev/null 2>&
 OPTS	= $(shell if [ -z $(HTTP_GET) ] ; then echo "" ; elif [ $(HTTP_GET) = curl ] ; then echo "-kL" ; elif [ $(HTTP_GET) = wget ] ; then echo "--no-check-certificate -O -" ; elif [ $(HTTP_GET) = fetch ] ; then echo "-o-" ; fi )
 
 DEPLOY_DIR	= $(HOME)/Dropbox/dev/MyScripts
+JQUERY_VERSION	= 1.9.1
 
 usage:
 	@echo "Usage:"
@@ -15,6 +16,7 @@ usage:
 	@echo "  === get external libraries ==="
 	@echo "  make oauth.js"
 	@echo "  make sha1.js"
+	@echo "  make jquery.min.js JQUERY_VERSION=$(JQUERY_VERSION)"
 	@echo "  make clean"
 	@echo ""
 	@echo "target \"deploy\"'s current: DEPLOY_DIR=$(DEPLOY_DIR)"
@@ -32,5 +34,9 @@ oauth.js: http-get-exist
 sha1.js:
 	$(HTTP_GET) $(OPTS) https://oauth.googlecode.com/svn/code/javascript/sha1.js > $@
 
+jquery.min.js:
+	@test -n "$(JQUERY_VERSION)" || { echo -n "\"make $@\" is need JQUERY_VERSION.\nsee https://developers.google.com/speed/libraries/devguide?hl=ja#jquery" ; exit 1 ; }
+	$(HTTP_GET) $(OPTS) http://ajax.googleapis.com/ajax/libs/jquery/$(JQUERY_VERSION)/jquery.min.js > $@
+
 clean:
-	-rm -f oauth.js sha1.js
+	-rm -f oauth.js sha1.js jquery.min.js
