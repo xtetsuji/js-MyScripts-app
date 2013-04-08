@@ -1,0 +1,36 @@
+# -*- makefile -*-
+# 2013/04/09
+#
+# TODO: Check this Makefile is used without "Mac OS X" environment.
+
+HTTP_GET	:= $(shell for CMD in curl wget fetch ; do if type $$CMD >/dev/null 2>&1 ; then echo $$CMD ; break ; fi ; done )
+OPTS	= $(shell if [ -z $(HTTP_GET) ] ; then echo "" ; elif [ $(HTTP_GET) = curl ] ; then echo "-kL" ; elif [ $(HTTP_GET) = wget ] ; then echo "--no-check-certificate -O -" ; elif [ $(HTTP_GET) = fetch ] ; then echo "-o-" ; fi )
+
+DEPLOY_DIR	= $(HOME)/Dropbox/dev/MyScripts
+
+usage:
+	@echo "Usage:"
+	@echo "  make deploy DEPLOY_DIR=/path/to/dropbox/dir/"
+	@echo ""
+	@echo "  === get external libraries ==="
+	@echo "  make oauth.js"
+	@echo "  make sha1.js"
+	@echo "  make clean"
+	@echo ""
+	@echo "target \"deploy\"'s current: DEPLOY_DIR=$(DEPLOY_DIR)"
+
+deploy:
+	find . -type f -name \*.js -exec cp '{}' $(DEPLOY_DIR)/
+
+http-get-exist: 
+	@test -n "$(HTTP_GET)" || { echo 'require "curl" or "wget" or "fetch" for HTTP GET' ; exit 1 ; }
+
+# see: http://pana4405.u-shizuoka-ken.ac.jp/archives/631
+oauth.js: http-get-exist
+	$(HTTP_GET) $(OPTS) https://oauth.googlecode.com/svn/code/javascript/oauth.js > $@
+
+sha1.js:
+	$(HTTP_GET) $(OPTS) https://oauth.googlecode.com/svn/code/javascript/sha1.js > $@
+
+clean:
+	-rm -f oauth.js sha1.js
