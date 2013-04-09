@@ -4,6 +4,7 @@ charset: utf-8
 title:
 description: Twitter文字数カウント
 see: http://www51.atwiki.jp/myscripts/pages/18.html
+caution: ティコリンクの長さは2013年4月現在の値を固定で持っていることと、非常用のUTF-8文字で文字数(String#length)が正しくカウントされない事がまれにある
 -->
 <!DOCTYPE html>
 <html>
@@ -38,7 +39,7 @@ $(document).ready(function(){
       //tweet = tweet + " http://twitpic.com/123456";
       tweet = tweet + " http://t.co/1234567890"; // やっぱりティコリンク
     }
-    var char = tweet.length;
+    var char = tweet.length; // TODO: String#length は厳密にはUTF-8文字数ではない
     var bytes = encodeURIComponent(tweet).replace(/%\w\w/g,'?').length;
     var info_html = '<strong>'+(140-char)+'</strong> (';
     info_html    += char+'文字、'+bytes+'バイト)<br />';
