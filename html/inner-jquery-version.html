@@ -1,0 +1,28 @@
+#HTML
+<!-- 
+charset: utf-8
+title:
+description: 内蔵jQueryのバージョンを調べるサンプル
+see: http://www51.atwiki.jp/myscripts/pages/18.html
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Innner jQuery version</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript">
+try {
+  $(document).ready(function(){
+    $("#jquery_version").text($.fn.jquery);
+  });
+} catch(err) {
+  document.getElementById("jquery_verion").innerText = "not found";
+}
+</script>
+</head>
+<body>
+<h1>Inner jQuery version</h1>
+<p id="jquery_version"></p>
+</body>
+</html>

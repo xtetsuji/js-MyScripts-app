@@ -1,0 +1,90 @@
+#HTML
+<!-- 
+charset: utf-8
+title:
+description: Twitter文字数カウント
+see: http://www51.atwiki.jp/myscripts/pages/18.html
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Twitter文字数カウント</title>
+<style type="text/css">
+strong { color: darkgray; font-weight: bold; font-size: 18pt; }
+input.tweet  { font-size: 14pt; }
+textarea#twitter_draft_counter {
+  font-size: 14pt;
+  /*width: 35em;*/
+  width: 100%;
+  height: 5em;
+  overflow: visible; 
+}
+</style>
+<script type="text/javascript" src="./jquery.js"></script> <!-- 内蔵 jquery.js を使う -->
+<script type="text/javascript">
+$(document).ready(function(){
+  var count = 1;
+  $("#twitter_draft_counter").keyup(function(){
+    var tweet = this.value;
+    if($("#tco_shorten")[0].checked) {
+      // ティコリンクに短縮されたものとして計算する
+      tweet = tweet.replace(/\bhttp:\/\/[^ ]+/g, "http://t.co/1234567890");
+      tweet = tweet.replace(/\bhttps:\/\/[^ ]+/g, "https://t.co/1234567890");
+    }
+    if($("#twitpic_append")[0].checked) {
+      //tweet = tweet + " http://twitpic.com/123456";
+      tweet = tweet + " http://t.co/1234567890"; // やっぱりティコリンク
+    }
+    var char = tweet.length;
+    var bytes = encodeURIComponent(tweet).replace(/%\w\w/g,'?').length;
+    var info_html = '<strong>'+(140-char)+'</strong> (';
+    info_html    += char+'文字、'+bytes+'バイト)<br />';
+    info_html    += '残り<strong>'+(255-bytes)+'</strong>バイト、UTF-8文字列にして残り<strong>'+(Math.floor((255-bytes)/3))+'</strong>文字は打てるでしょう。';
+    $("#twitter_draft_info").html(info_html);
+  });
+  $("#twitter_draft_counter").keyup(); /* 一度押しておく */
+
+  $("#tco_shorten").click(function(){
+    $("#twitter_draft_counter").keyup();
+  });
+  $("#twitpic_append").click(function(){
+    $("#twitter_draft_counter").keyup();
+  });
+
+  $("#reset_twitter_draft_counter").click(function(){
+    if(confirm("内容をリセットしますか？")){
+      $("#twitter_draft_counter").val("");
+      $("#twitter_draft_counter").keyup();
+    }
+  });
+  $("#open_twitter_client").click(function(){
+    var screen_name = $("#screen_name").val(); // or .text() ?
+    if(!screen_name)screen_name="";
+    if(confirm("Tweetbotを起動します")){
+      location.href = "tweetbot://"+screen_name+"/post?text="+encodeURIComponent($("#twitter_draft_counter").val());
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+
+<h1>Twitter文字数カウント</h1>
+
+<div class="word_count">
+<textarea id="twitter_draft_counter"></textarea>
+<br />
+<label><input type="checkbox" id="tco_shorten" checked="checked">t.coリンクで短縮された場合の文字数を計算</label><br />
+<label><input type="checkbox" id="twitpic_append">twitpicのアドレスが一つついた場合の文字数を計算</label><br />
+<div id="twitter_draft_info"></div>
+<button id="open_twitter_client">Tweetbot for iOSでオープン</button><br />
+(<label>screen_name: <input type="text" id="screen_name" value="" /></label>)<br />
+<input type="button" id="reset_twitter_draft_counter" value="リセット" />
+</div>
+
+</body>
+</html>
