@@ -24,17 +24,20 @@ usage:
 
 deploy:
 	find . -type f -name \*.js -exec cp '{}' $(DEPLOY_DIR)/ ';'
+	cp html/*.html $(DEPLOY_DIR)/
 
 http-get-exist: 
 	@test -n "$(HTTP_GET)" || { echo 'require "curl" or "wget" or "fetch" for HTTP GET' ; exit 1 ; }
 
 # see: http://pana4405.u-shizuoka-ken.ac.jp/archives/631
 oauth.js sha1.js: http-get-exist
-	$(HTTP_GET) $(OPTS) https://oauth.googlecode.com/svn/code/javascript/$@ > $@
+	echo "#LIB" > $@
+	$(HTTP_GET) $(OPTS) https://oauth.googlecode.com/svn/code/javascript/$@ >> $@
 
 jquery.min.js: http-get-exist
 	@test -n "$(JQUERY_VERSION)" || { echo -n "\"make $@\" is need JQUERY_VERSION.\nsee https://developers.google.com/speed/libraries/devguide?hl=ja#jquery" ; exit 1 ; }
-	$(HTTP_GET) $(OPTS) http://ajax.googleapis.com/ajax/libs/jquery/$(JQUERY_VERSION)/jquery.min.js > $@
+	echo "#LIB" > $@
+	$(HTTP_GET) $(OPTS) http://ajax.googleapis.com/ajax/libs/jquery/$(JQUERY_VERSION)/jquery.min.js >> $@
 
 external-jss:
 	$(MAKE) oauth.js sha1.js jquery.min.js
