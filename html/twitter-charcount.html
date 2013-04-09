@@ -5,6 +5,7 @@ title:
 description: Twitter文字数カウント
 see: http://www51.atwiki.jp/myscripts/pages/18.html
 caution: ティコリンクの長さは2013年4月現在の値を固定で持っていることと、非常用のUTF-8文字で文字数(String#length)が正しくカウントされない事がまれにある
+see: https://twitter.com/xtetsuji/status/321587117845266432
 -->
 <!DOCTYPE html>
 <html>
@@ -24,14 +25,14 @@ textarea#twitter_draft_counter {
   overflow: visible; 
 }
 </style>
-<script type="text/javascript" src="./jquery.js"></script> <!-- 内蔵 jquery.js を使う -->
+<script type="text/javascript" src="./jquery.js"></script> <!-- 内蔵 jquery.js を使う (逆にライブラリのは #HTML からは使えないらしい) -->
 <script type="text/javascript">
 $(document).ready(function(){
   var count = 1;
   $("#twitter_draft_counter").keyup(function(){
     var tweet = this.value;
     if($("#tco_shorten")[0].checked) {
-      // ティコリンクに短縮されたものとして計算する
+      // ティコリンクに短縮されたものとして計算する(2013年4月現在)
       tweet = tweet.replace(/\bhttp:\/\/[^ ]+/g, "http://t.co/1234567890");
       tweet = tweet.replace(/\bhttps:\/\/[^ ]+/g, "https://t.co/1234567890");
     }
