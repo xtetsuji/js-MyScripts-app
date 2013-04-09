@@ -8,6 +8,7 @@ OPTS	= $(shell if [ -z $(HTTP_GET) ] ; then echo "" ; elif [ $(HTTP_GET) = curl 
 
 DEPLOY_DIR	= $(HOME)/Dropbox/dev/MyScripts
 JQUERY_VERSION	= 1.9.1
+EXTERNAL_JSS	= oauth.js sha1.js jquery.min.js
 
 usage:
 	@echo "Usage:"
@@ -40,7 +41,7 @@ jquery.min.js: http-get-exist
 	$(HTTP_GET) $(OPTS) http://ajax.googleapis.com/ajax/libs/jquery/$(JQUERY_VERSION)/jquery.min.js >> $@
 
 external-jss:
-	$(MAKE) oauth.js sha1.js jquery.min.js
+	$(MAKE) $(EXTERNAL_JSS)
 
 clean:
-	-rm -f oauth.js sha1.js jquery.min.js
+	-rm -f $(EXTERNAL_JSS)
