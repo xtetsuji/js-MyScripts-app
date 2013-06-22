@@ -5,10 +5,12 @@ JavaScript library of MyScripts iOS app
 
 このライブラリはiOSアプリ["MyScripts"](http://unitkay.wordpress.com/myscripts/)で使うことができるJavaScriptを集めたライブラリです。
 
-MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウントをお持ちでしたら、このリポジトリをDropbox以下にチェックインして利用すると便利でしょう。
+MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウントをお持ちでしたら、このリポジトリをDropbox以下にチェックインして利用すると便利でしょう。 → **Dropboxはシンボリックリンクを実体化してしまうため、シンボリックリンクを利用するGitは誤作動を起こす可能性があります。オススメできません**
     
-    $ cd ~/Dropbox/
+    $ cd ~/git/
     $ git clone git://github.com/xtetsuji/js-MyScripts-app.git
+    $ cd js-MyScripts-app
+    $ make deploy DEPLOY_DIR=~/git/js_MyScripts-app
 
 特にスクリプト内に注釈がない場合、 **スクリプトのライセンスはMITライセンス** といたします。ご自由にお使いください。
 
