@@ -4,7 +4,7 @@
 // description: Wikipanionが必要です
 
 if(TEXT.match(/wikipedia\.org/)){
-    "wiki" + (TEXT.substring(4,TEXT.length).replace(/\.m\./,"."));
+    "wiki"+TEXT.replace(/^https?/,"").replace(/\.m\./,".");
 } else {
     void(0);
 }
