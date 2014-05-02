@@ -10,7 +10,7 @@ MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウン
     $ cd ~/git/
     $ git clone git://github.com/xtetsuji/js-MyScripts-app.git
     $ cd js-MyScripts-app
-    $ make -v -p ~/Dropbox/js-MyScripts-app
+    $ mkdir -v -p ~/Dropbox/js-MyScripts-app
     $ make deploy DEPLOY_DIR=~/Dropbox/js-MyScripts-app
 
 特にスクリプト内に注釈がない場合、 **スクリプトのライセンスはMITライセンス** といたします。ご自由にお使いください。
