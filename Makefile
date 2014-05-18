@@ -6,8 +6,9 @@
 HTTP_GET	:= $(shell for CMD in curl wget fetch ; do if type $$CMD >/dev/null 2>&1 ; then echo $$CMD ; break ; fi ; done )
 OPTS	= $(shell if [ -z $(HTTP_GET) ] ; then echo "" ; elif [ $(HTTP_GET) = curl ] ; then echo "-kL" ; elif [ $(HTTP_GET) = wget ] ; then echo "--no-check-certificate -O -" ; elif [ $(HTTP_GET) = fetch ] ; then echo "-o-" ; fi )
 
+# you can use this config. or you can override make command.
 DEPLOY_DIR	= $(HOME)/Dropbox/dev/MyScripts
-JQUERY_VERSION	= 1.9.1
+JQUERY_VERSION	= 1.11.1
 EXTERNAL_JSS	= oauth.js sha1.js jquery.min.js
 
 usage:
