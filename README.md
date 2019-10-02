@@ -31,7 +31,6 @@ MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウン
 
 - [作者による公式ページ](http://unitkay.wordpress.com/myscripts/)
 - [MyScripts @ Wiki](http://www51.atwiki.jp/myscripts/)
-- [Delicious/ogata/#myscripts (my bookmarks)](http://delicious.com/ogata/myscripts)
 
 ----
 
