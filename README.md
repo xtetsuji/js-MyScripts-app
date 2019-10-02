@@ -29,7 +29,7 @@ MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウン
 
 参考:
 
-- [作者による公式ページ](http://unitkay.wordpress.com/myscripts/)
+- [作者による公式ページ](http://unitkay.com/myscripts/))
 - [MyScripts @ Wiki](http://www51.atwiki.jp/myscripts/)
 
 ----
