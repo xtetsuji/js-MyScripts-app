@@ -3,7 +3,17 @@ JavaScript library of MyScripts iOS app
 
 (Simply English description is followed Japanese)
 
-このライブラリはiOSアプリ["MyScripts"](http://unitkay.wordpress.com/myscripts/)で使うことができるJavaScriptを集めたライブラリです。
+iOS 用ソフトウェア MyScripts は、既に最新の iOS（少なくとも iOS 12 以上）ではサポートされていません。
+同様のことを行いたい場合、Apple が標準アプリとして提供しているショートカットアプリなどを使用することができるでしょう。
+このリポジトリは、MyScripts が使われていた当時の記録として残しています。
+
+MyScripts iOS software is not supported on newest iOS version already.
+If you want to do MyScripts' like recipe, then you can use Apple Shortcut.app, and so on.
+This repository is left for record past MyScript days.
+
+---
+
+このライブラリはiOSアプリ["MyScripts"](http://unitkay.com/myscripts/)で使うことができるJavaScriptを集めたライブラリです。
 
 MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウントをお持ちでしたら、このリポジトリをDropbox以下にチェックインして利用すると便利でしょう。 → **Dropboxはシンボリックリンクを実体化してしまうらしいので、別の場所でcloneしたGitディレクトリのシンボリックリンクを作ると意図しないディスクの無駄になる可能性もあります。**
     
