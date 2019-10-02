@@ -1,9 +1,19 @@
 JavaScript library of MyScripts iOS app
 =======================================
 
+**iOS 用ソフトウェア MyScripts は、既に最新の iOS（少なくとも iOS 12 以上）ではサポートされていません。**
+同様のことを行いたい場合、Apple が標準アプリとして提供しているショートカットアプリなどを使用することができるでしょう。
+このリポジトリは、MyScripts が使われていた当時の記録として残しています。
+
+**MyScripts iOS software is not supported on newest iOS version already.**
+If you want to do MyScripts' like recipe, then you can use Apple Shortcut.app, and so on.
+This repository is left for record past MyScript days.
+
+---
+
 (Simply English description is followed Japanese)
 
-このライブラリはiOSアプリ["MyScripts"](http://unitkay.wordpress.com/myscripts/)で使うことができるJavaScriptを集めたライブラリです。
+このライブラリはiOSアプリ["MyScripts"](http://unitkay.com/myscripts/)で使うことができるJavaScriptを集めたライブラリです。
 
 MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウントをお持ちでしたら、このリポジトリをDropbox以下にチェックインして利用すると便利でしょう。 → **Dropboxはシンボリックリンクを実体化してしまうらしいので、別の場所でcloneしたGitディレクトリのシンボリックリンクを作ると意図しないディスクの無駄になる可能性もあります。**
     
@@ -19,13 +29,12 @@ MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウン
 
 参考:
 
-- [作者による公式ページ](http://unitkay.wordpress.com/myscripts/)
+- [作者による公式ページ](http://unitkay.com/myscripts/)
 - [MyScripts @ Wiki](http://www51.atwiki.jp/myscripts/)
-- [Delicious/ogata/#myscripts (my bookmarks)](http://delicious.com/ogata/myscripts)
 
 ----
 
-This repositry is JavaScript library for Japanese iOS application ["MyScripts"](http://unitkay.wordpress.com/myscripts/).
+This repositry is JavaScript library for Japanese iOS application ["MyScripts"](http://unitkay.com/myscripts/).
 
 I do not know MyScripts'es English description or introduction page. And I do not know that you can purchase "MyScripts" on your country App Store. However I think that "MyScripts" is powerful tool for your iPhone/iPad/iPod Touch. "MyScripts" let your iOS environment comfortable.
 
