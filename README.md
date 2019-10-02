@@ -29,12 +29,12 @@ MyScriptsはDropboxとの連携機能があるので、もしDropboxアカウン
 
 参考:
 
-- [作者による公式ページ](http://unitkay.com/myscripts/))
+- [作者による公式ページ](http://unitkay.com/myscripts/)
 - [MyScripts @ Wiki](http://www51.atwiki.jp/myscripts/)
 
 ----
 
-This repositry is JavaScript library for Japanese iOS application ["MyScripts"](http://unitkay.wordpress.com/myscripts/).
+This repositry is JavaScript library for Japanese iOS application ["MyScripts"](http://unitkay.com/myscripts/).
 
 I do not know MyScripts'es English description or introduction page. And I do not know that you can purchase "MyScripts" on your country App Store. However I think that "MyScripts" is powerful tool for your iPhone/iPad/iPod Touch. "MyScripts" let your iOS environment comfortable.
 
