@@ -1,17 +1,17 @@
 JavaScript library of MyScripts iOS app
 =======================================
 
-(Simply English description is followed Japanese)
-
-iOS 用ソフトウェア MyScripts は、既に最新の iOS（少なくとも iOS 12 以上）ではサポートされていません。
+**iOS 用ソフトウェア MyScripts は、既に最新の iOS（少なくとも iOS 12 以上）ではサポートされていません。**
 同様のことを行いたい場合、Apple が標準アプリとして提供しているショートカットアプリなどを使用することができるでしょう。
 このリポジトリは、MyScripts が使われていた当時の記録として残しています。
 
-MyScripts iOS software is not supported on newest iOS version already.
+**MyScripts iOS software is not supported on newest iOS version already.**
 If you want to do MyScripts' like recipe, then you can use Apple Shortcut.app, and so on.
 This repository is left for record past MyScript days.
 
 ---
+
+(Simply English description is followed Japanese)
 
 このライブラリはiOSアプリ["MyScripts"](http://unitkay.com/myscripts/)で使うことができるJavaScriptを集めたライブラリです。
 
